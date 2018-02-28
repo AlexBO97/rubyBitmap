@@ -46,6 +46,9 @@ def clear_image(image, lin, col)
   end
 end
 
+def isalpha(ch)
+  ch >= 'A' && ch <= 'Z'
+end
 
 
 def run 
@@ -69,6 +72,10 @@ def run
         end
       end
 
+      if lin == 0 || col == 0
+        puts "INVALID COMMAND"
+        break        
+      end
       clear_image(image, lin, col)
 
     end
@@ -95,6 +102,13 @@ def run
           end
         end
       end
+
+
+      if linn == 0 || coll == 0 || isalpha(colour) == false
+        puts "INVALID COMMAND WHEN CREATING A NEW IMAGE"
+        break
+      end
+
       image[coll][linn] = colour
 
     end
@@ -120,7 +134,11 @@ def run
         end
       end
 
-  
+      if x == 0 || y1 == 0 || y2 == 0 || isalpha(colour) == false
+        puts "INVALID COMMAND FOR VERTICAL SEGMENT"
+        break
+      end
+
       for i in y1..y2
         image[i][x] = colour
       end
@@ -148,7 +166,12 @@ def run
         end
       end
 
-  
+      
+      if y == 0 || x1 == 0 || x2 == 0 || isalpha(colour) == false
+        puts "INVALID COMMAND FOR HORIZONTAL SEGMENT"
+        break
+      end
+
       for j in x1..x2
         image[y][j] = colour
       end
