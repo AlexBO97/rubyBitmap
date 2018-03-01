@@ -20,3 +20,5 @@ $ ruby bitmap_editor        --------        this will display the solution in th
 
 # Contents
 
+In the src/ folder      ->      bitmap_editor.rb -> editing the image
+In the image/ folder    ->      functions.rb     -> all the necessary functions to help edit the image
